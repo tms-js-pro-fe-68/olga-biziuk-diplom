@@ -1,10 +1,10 @@
 import { Fab } from '@mui/material'
 import { Add as AddIcon } from '@mui/icons-material'
-import { useReducer, useState } from 'react'
-import TodoItemEditor from './TodoItemEditor'
+import { useState } from 'react'
+import BeverageDialog from './pages/BeverageDialog'
 
-export default function AddTodoItemButton({ onAfterSubmit }) {
-const [count, setCount] = useState(0)
+export default function AddBeverageItemButton({ onAfterSubmit }) {
+
 const [isOpen, setIsOpen] = useState(false)
 
 const open = () => setIsOpen(true)
@@ -18,7 +18,7 @@ return (
     >
         <AddIcon />
     </Fab>
-    <TodoItemEditor
+    <BeverageItemEditor
         open={isOpen}
         onClose={() => setIsOpen(false)}
         onAfterSubmit={onAfterSubmit}

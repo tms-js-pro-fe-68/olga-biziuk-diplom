@@ -1,9 +1,9 @@
-import { useEffect, useState } from "react";
-import Page from "../components/Page";
-import AppBar from "../components/AppBar";
-import { Box, Checkbox, Fab, IconButton, List, ListItem, ListItemButton, ListItemIcon, ListItemText, Paper, Stack } from "@mui/material";
-import { Edit as EditIcon, Delete as DeleteIcon, Add as AddIcon } from "@mui/icons-material";
-import ConfirmDialog from "../components/ConfirmDialog";
+import { useEffect, useState } from 'react';
+import Page from '../Page';
+import AppBar from '../AppBar';
+import { Box, Checkbox, Fab, IconButton, List, ListItem, ListItemButton, ListItemIcon, ListItemText, Paper, Stack } from '@mui/material';
+import { Edit as EditIcon, Delete as DeleteIcon, Add as AddIcon } from '@mui/icons-material';
+
 
 export default function HomePage() {
 const [todos, setTodos] = useState([]);
@@ -34,7 +34,6 @@ const handleDeleteConfirmClose = () => setIsdDeleteConfirmDialogOpen(false);
 return(
 <Page>  
 <AppBar />
-<CustomHook />
 
 <Box sx={{display: 'grid', gap: 2, gridTemplateColums: '1fr', p:2}}>
 {[...todos, ...todos, ...todos, ...todos].map((todoItem) => (

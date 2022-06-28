@@ -1,12 +1,13 @@
-import { AppBar as MuiAppBar, Toolbar, Typography, IconButton, Box, Menu, MenuItem } from "@mui/material";
-import { AccountCircle } from "@mui/icons-material";
-import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { AppBar as MuiAppBar, Toolbar, Typography, IconButton, Box, Menu, MenuItem } from '@mui/material';
+import { AccountCircle } from '@mui/icons-material';
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 
 export default function AppBar() {
 const navigate = useNavigate();
 const [anchorEl, setAnchorEl] = useState(null);
+
 const handleOpenMenu = (event) => setAnchorEl(event.currentTarget)
 const handleCloseMenu = () => setAnchorEl(null)
 
@@ -21,7 +22,7 @@ handleCloseMenu()
         <MuiAppBar position="fixed">
         <Toolbar>
         <Typography variant="h6" component="div" sx={{ flexGrow: 1, width: '200px' }}>
-            HomePage
+            Попробуйте прелестный кофеёк
         </Typography>
 
             <Box>
@@ -55,7 +56,5 @@ handleCloseMenu()
             </Box>
         </Toolbar>
     </MuiAppBar>
-    //   <Box sx={{ minHeight: {xs: 56, sm: 56, md: 64} }} />
-
     )
 }  

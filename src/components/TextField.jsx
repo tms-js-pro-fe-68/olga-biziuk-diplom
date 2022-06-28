@@ -1,9 +1,19 @@
-export default function TextField({ label, error,  ...otherProps} ) {
-    return (
-        <>
-        <label htmlFor="email"> {label}</label>
-        <input id='email' type="email" name="email" {...otherProps} />
-        {!!error && <span style={{ color: 'red' }}>{error}</span>}
-        </>
-    );
-}  
+import { TextField } from '@mui/material'
+
+export default function FormikTextField({ name, formik, ...otherProps }) {
+return (
+    <TextField
+    id={name}
+    name={name}
+    type={name}
+    onChange={formik.handleChange}
+    onBlur={formik.handleBlur}
+    value={formik.values[name]}
+    error={formik.touched[name] && !!formik.errors[name]}
+    helperText={
+    formik.touched[name] && !!formik.errors[name] && formik.errors[name]
+    }
+    {...otherProps}
+    />
+)
+}
