@@ -50,3 +50,82 @@ const productsList = [
         price: '8'
         image: 'https://cdn.lifehacker.ru/wp-content/uploads/2017/04/Irish-Coffee-31-thespiceapron-com_1493286106-e1494846917217-630x318.jpg',      
     },
+
+]
+
+export function OrderAction() {
+    const [count, setCount] = useState(0)
+
+    return (
+        <Box ml="auto">
+            {count === 0 && (
+                <Button variant='contained' onClick={() => setCount(c => c + 1)}>
+                    Заказать напиток
+                </Button>
+            )}
+            {count > 0 && (
+                <ButtonGroup variant="outlined" aria-label="outlined button group">
+                    <Button onClick={() => setCount(c => c - 1)}>-</Button>
+                    <Button>{count}</Button>
+                    <Button onClick={() => setCount(c => c + 1)}>+</Button>
+                </ButtonGroup>
+            )}
+        </Box>
+    )
+}
+
+
+export default function ProductsPage() {
+
+    return (
+
+
+        <Box
+            sx={{
+                p: 2,
+                display: 'grid',
+                gap: 2,
+                gridTemplateColumns: {
+                    xs: "repeat(1, 1fr)",
+                    md: "repeat(3, 1fr)",
+                    lg: "repeat(6, 1fr)",
+                },
+            }}
+        >
+            {productsList.map((item) => (
+                <Card sx={{ maxWidth: 250, height: 350 }}
+                >
+                    <CardMedia
+                        component="img"
+                        height="170"
+                        image={item.image}
+                        alt="Paella dish"
+                    />
+                    <CardContent >
+                        <Stack direction='row' justifyContent='space-between' >
+                            <Typography variant="body1"  >
+                                {item.name}
+                            </Typography>
+                            <Typography variant="body1" color="textSecondary" sx={{ fontWeight: 'bold' }} >
+                                {item.price}$
+                            </Typography>
+                        </Stack>
+                        <Typography variant="body1" color="textSecondary" >
+                            {item.description}
+                        </Typography>
+                    </CardContent>
+                    <CardActions disableSpacing>
+                        <IconButton aria-label="add to favorites">
+                            <FavoriteIcon />
+                        </IconButton>
+                        <IconButton aria-label="share">
+                            <ShareIcon />
+                        </IconButton>
+                        <OrderAction />
+                    </CardActions>
+                </Card>
+            ))}
+        </Box>
+
+    )
+}

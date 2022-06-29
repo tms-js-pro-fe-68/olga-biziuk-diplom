@@ -1,6 +1,6 @@
-import { useEffect, useState } from 'react';
-import Page from '../Page';
-import AppBar from '../AppBar';
+import { useEffect, useState } from 'react'
+import Page from '../Page'
+import AppBar from '../AppBar'
 import { Box, Checkbox, Fab, IconButton, List, ListItem, ListItemButton, ListItemIcon, ListItemText, Paper, Stack } from '@mui/material';
 import { Edit as EditIcon, Delete as DeleteIcon, Add as AddIcon } from '@mui/icons-material';
 

@@ -1,42 +1,48 @@
-.App {
-  text-align: center;
+body {
+  margin: 0;
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #65f3bc;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+form {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  width: 500px;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  margin: 50px auto;
+  padding: 30px 50px 50px 50px;
+  border: 5px solid #ffffff;
+  border-radius: 10px;
+}
+form label {
+  font-size: 27px;
+  color: #ffffff;
+  padding: 20px 0px;
+}
+form label input,
+form label select {padding: 10px 0px;
+  border: 2px solid #ffffff;
+  border-radius: 10px;
+  margin-top: 5px;
+  font-size: 20px;
+}
+form label select {
+  margin-bottom: 10px;
+}
+form button {
+  height: 50px;
+  border: 2px solid #dd3636;
+  border-radius: 10px;
+  color: #40c734;
+  font-size: 27px;
+  font-weight: 600;
+  background-color: #ffffff;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-button {
-  font-size: calc(10px + 2vmin);
-}
+form button:disabled {
+  opacity: 0,5;
+} 

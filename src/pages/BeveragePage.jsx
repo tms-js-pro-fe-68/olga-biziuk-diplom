@@ -15,13 +15,13 @@ import {
     Favorite as FavoriteIcon,
     Share as ShareIcon,
 } from '@mui/icons-material'
-import AppBar from '../../components/AppBar'
-import Page from '../../components/Page'
-import { useBeverageGet } from './query/beverages'
-import CartButton from './CartButton'
-import { useAppContext } from '../../components/AppContext'
-import ClickBoundary from '../../components/ClickBoundary'
+import AppBar from '../components/AppBar'
+import Page from '../components/Page'
+import { useBeverageGet } from '../query/beverages'
+// import CartButton from '../CartButton'
+import { useAppContext } from '../components/AppContext'
 import BeverageDialog from './BeverageDialog'
+
 
 export default function BeveragePage() {
 const { data: beverages = [] } = useBeverageGet()

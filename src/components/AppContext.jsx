@@ -1,21 +1,10 @@
-import { useEffect, createContext, useContext, useState} from 'react'
+import { createContext, useContext } from 'react'
 
 const Context = createContext()
 export const useAppContext = () => useContext(Context)
 
-export default function AppContextProvider({ children }) {
-  const [isInitialized, setIsInitialized] = useState(false)
+export default function AppContextProvider({ children, context }) {
 
-
-  useEffect(() => {
-    if (sessionStorage.token) { 
-        api.setup(sessionStorage.token)
-        setIsInitialized(true)
-    } else {
-    }
-  }, [])
-
-return <Context.Provider value={{ isInitialized }}>
-{children}
+return <Context.Provider value={context}>{children}
 </Context.Provider>
 } 
