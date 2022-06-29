@@ -1,6 +1,6 @@
 import { useQuery } from 'react-query'
 import { useAppContext} from '../components/AppContext' 
-import api from '../api'
+
 
 export function useBeveragesGet(options) {
     const {isInitialized} = useAppContext ()

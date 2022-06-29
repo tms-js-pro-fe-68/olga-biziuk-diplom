@@ -11,10 +11,10 @@ import { useFormik } from 'formik'
 import { useEffect, useState } from 'react'
 import { useQueryClient } from 'react-query'
 import { object, string, number } from 'yup'
-import api from '../../api'
-import FormikTextField from '../../components/FormikTextField'
+import FormikTextField from '../components/TextField'
 
-export default function PizzaDialog({
+
+export default function BeverageDialog({
     title,
     text,
     onClose,
@@ -83,7 +83,7 @@ export default function PizzaDialog({
     return (
     <Dialog {...{ onClose, ...otherProps }}>
         <form onSubmit={formik.handleSubmit}>
-        <DialogTitle>Добавить пиццу</DialogTitle>
+        <DialogTitle>Добавить напиток</DialogTitle>
         <DialogContent>
             <Box
             sx={{
@@ -143,7 +143,7 @@ export default function PizzaDialog({
         <DialogActions>
             <Button onClick={onClose}>Cancel</Button>
             <Button type="submit" autoFocus>
-            добавить
+            Добавить
             </Button>
         </DialogActions>
         </form>
